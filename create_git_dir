@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# Script to create git environment and associate with Github repo
+
+default_username="mdoakley2"
+default_repo="repo10"
+default_email="mdo04281953@proton.me"
+default_subdirectory="project10"
+
+printf "\n"
+printf "Github username  [%-25s] : " ${default_username}
+read username
+if [ -z ${username} ]; then username=${default_username}; fi
+
+printf "Repo to use      [%-25s] : " ${default_repo}
+read repo
+if [ -z ${repo} ]; then repo=${default_repo}; fi
+
+printf "Email            [%-25s] : " ${default_email}
+read email
+if [ -z ${email} ]; then email=${default_email}; fi
+
+printf "git subdirectory [%-25s] : " ${default_repo}
+read git_dir
+if [ -z ${git_dir} ]; then git_dir=${default_repo}; fi
+
+mkdir ${git_dir}
+
+printf "\nCreate repository on Github if it does not already exist"
+printf "\nPress RETURN to continue\n"
+read CR
+
+cd ${git_dir}
+echo "test data" > testfile
+
+git init
+git add .
+git commit -m 'Initial commit'
+
+printf "Username = %s\n" ${username}
+printf "Email    = %s\n" ${email}
+printf "Repo     = %s\n" ${repo}
+
+git config --global user.name  ${username}
+git config --global user.email ${email}
+git config -l
+
+git remote add origin https://github.com/${username}/${repo}.git
+git remote set-url origin git@github.com:${username}/${repo}
+git branch -M main
+git push -u origin main
+
