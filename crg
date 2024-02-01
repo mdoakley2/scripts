@@ -2,6 +2,9 @@
 
 # Script to create git environment and associate with Github repo
 
+/bin/date
+printf "\n"
+
 default_username="mdoakley2"
 default_repo="repo10"
 default_email="mdo04281953@proton.me"
