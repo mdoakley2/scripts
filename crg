@@ -2,6 +2,8 @@
 
 # Script to create git environment and associate with Github repo
 
+printf "In %s\n" $0
+
 /bin/date
 printf "\n"
 
