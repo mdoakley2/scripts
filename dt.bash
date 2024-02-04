@@ -10,5 +10,8 @@ cat /etc/default/google-chrome
 printf "\n\n"
 cat /etc/default/keyboard
 printf "\n\n"
-
+cat /etc/default/
+printf "\n\n"
+cat /etc/default/sysstat
+printf "\n\n"
 exit
