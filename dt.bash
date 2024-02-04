@@ -7,4 +7,8 @@ printf "\n\n"
 cat /etc/hosts
 printf "\n\n"
 cat /etc/default/google-chrome
+printf "\n\n"
+cat /etc/default/keyboard
+printf "\n\n"
+
 exit
